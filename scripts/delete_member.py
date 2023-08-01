@@ -19,8 +19,6 @@ def remove_member():
         with open("data/members.json", "r") as file:
             members_list = json.load(file)
 
-        display_members_list()
-
         member_number = int(input("Podaj numer uczestnika do usunięcia: "))
         if 1 <= member_number <= len(members_list):
             removed_member = members_list.pop(member_number - 1)
