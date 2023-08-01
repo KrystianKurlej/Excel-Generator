@@ -4,6 +4,9 @@ import json
 from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
 from openpyxl.styles import Font, NamedStyle, Border, Side, PatternFill
+from colorama import init, Fore, Back, Style
+
+init()
 
 
 def is_input_correct(input):
@@ -128,14 +131,18 @@ def create_excel_file(year, month):
     # Zapisz arkusz do pliku
     filename = f"Lista obecności - {month_name} {year}.xlsx"
     workbook.save(filename)
-    print(f"Utworzono plik: Lista obecności - {month_name} {year}.xlsx")
+    print(
+        f"{Fore.GREEN}Utworzono plik: Lista obecności - {month_name} {year}.xlsx{Style.RESET_ALL}"
+    )
 
 
 if __name__ == "__main__":
-    year = take_input("Podaj rok: ")
-    month = take_input("Podaj miesiąc (w formacie 1-12): ")
+    year = take_input(Fore.BLUE + "Podaj rok: " + Style.RESET_ALL)
+    month = take_input(
+        Fore.BLUE + "Podaj miesiąc (w formacie 1-12): " + Style.RESET_ALL
+    )
 
     if month < 1 or month > 12:
-        print("Podano niepoprawny miesiąc.")
+        print(Fore.RED + "Podano niepoprawny miesiąc." + Style.RESET_ALL)
     else:
         create_excel_file(year, month)
