@@ -8,7 +8,7 @@ def display_members_list():
     try:
         with open("data/members.json", "r") as file:
             members_list = json.load(file)
-            print(Fore.BLUE + "Aktualna lista uczestników:" + Style.RESET_ALL)
+            print(Fore.CYAN + "Aktualna lista uczestników:" + Style.RESET_ALL)
             for idx, member in enumerate(members_list, start=1):
                 print(f"{idx}. {member}")
     except FileNotFoundError:
@@ -19,7 +19,7 @@ def display_members_list():
 
 def add_new_member():
     new_member = input(
-        Fore.BLUE + "Podaj imię i nazwisko nowego uczestnika: " + Style.RESET_ALL
+        Fore.CYAN + "Podaj imię i nazwisko nowego uczestnika: " + Style.RESET_ALL
     )
     try:
         with open("data/members.json", "r") as file:

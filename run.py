@@ -24,17 +24,17 @@ def take_input(question):
 if __name__ == "__main__":
     while True:
         print("")
-        print(Back.BLUE + Style.BRIGHT + " Wybierz opcję: " + Style.RESET_ALL)
+        print(Back.CYAN + Style.BRIGHT + " Wybierz opcję: " + Style.RESET_ALL)
         print("")
-        print(Fore.BLUE + " 1. " + Style.RESET_ALL + "Generowanie Excela ")
-        print(Fore.BLUE + " 2. " + Style.RESET_ALL + "Dodawanie uczestnika ")
-        print(Fore.BLUE + " 3. " + Style.RESET_ALL + "Usuwanie uczestnika ")
+        print(Fore.CYAN + " 1. " + Style.RESET_ALL + "Generowanie Excela ")
+        print(Fore.CYAN + " 2. " + Style.RESET_ALL + "Dodawanie uczestnika ")
+        print(Fore.CYAN + " 3. " + Style.RESET_ALL + "Usuwanie uczestnika ")
         print(
-            Fore.BLUE + " 4. " + Style.RESET_ALL + "Zakończ program " + Style.RESET_ALL
+            Fore.CYAN + " 4. " + Style.RESET_ALL + "Zakończ program " + Style.RESET_ALL
         )
         print("")
 
-        choice = take_input(Fore.BLUE + "Podaj numer opcji: " + Style.RESET_ALL)
+        choice = take_input(Fore.CYAN + "Podaj numer opcji: " + Style.RESET_ALL)
 
         if choice == 1:
             try:

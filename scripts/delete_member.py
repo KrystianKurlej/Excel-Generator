@@ -8,7 +8,7 @@ def display_members_list():
     try:
         with open("data/members.json", "r") as file:
             members_list = json.load(file)
-            print(Fore.BLUE + "Aktualna lista uczestników:" + Style.RESET_ALL)
+            print(Fore.CYAN + "Aktualna lista uczestników:" + Style.RESET_ALL)
             for idx, member in enumerate(members_list, start=1):
                 print(f"{idx}. {member}")
     except FileNotFoundError:
@@ -23,7 +23,7 @@ def remove_member():
             members_list = json.load(file)
 
         member_number = int(
-            input(Fore.BLUE + "Podaj numer uczestnika do usunięcia: " + Style.RESET_ALL)
+            input(Fore.CYAN + "Podaj numer uczestnika do usunięcia: " + Style.RESET_ALL)
         )
         if 1 <= member_number <= len(members_list):
             removed_member = members_list.pop(member_number - 1)

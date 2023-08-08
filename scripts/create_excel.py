@@ -137,9 +137,9 @@ def create_excel_file(year, month):
 
 
 if __name__ == "__main__":
-    year = take_input(Fore.BLUE + "Podaj rok: " + Style.RESET_ALL)
+    year = take_input(Fore.CYAN + "Podaj rok: " + Style.RESET_ALL)
     month = take_input(
-        Fore.BLUE + "Podaj miesiąc (w formacie 1-12): " + Style.RESET_ALL
+        Fore.CYAN + "Podaj miesiąc (w formacie 1-12): " + Style.RESET_ALL
     )
 
     if month < 1 or month > 12:
