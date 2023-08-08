@@ -8,6 +8,8 @@ from colorama import init, Fore, Back, Style
 
 init()
 
+members_data_source = "mock_members.json"
+
 
 def is_input_correct(input):
     try:
@@ -52,7 +54,7 @@ def create_excel_file(year, month):
     month_name = get_polish_month_name(month)
 
     # Wczytaj listę osób z pliku JSON
-    with open("data/members.json", "r") as file:
+    with open(members_data_source, "r") as file:
         members_list = json.load(file)
 
     # Utwórz nowy plik Excela i dodaj arkusz

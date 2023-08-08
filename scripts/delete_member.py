@@ -1,12 +1,14 @@
 import json
-from colorama import init, Fore, Back, Style
+from colorama import init, Fore, Style
 
 init()
+
+members_data_source = "mock_members.json"
 
 
 def display_members_list():
     try:
-        with open("data/members.json", "r") as file:
+        with open(members_data_source, "r") as file:
             members_list = json.load(file)
             print(Fore.CYAN + "Aktualna lista uczestników:" + Style.RESET_ALL)
             for idx, member in enumerate(members_list, start=1):
@@ -19,7 +21,7 @@ def display_members_list():
 
 def remove_member():
     try:
-        with open("data/members.json", "r") as file:
+        with open(members_data_source, "r") as file:
             members_list = json.load(file)
 
         member_number = int(
@@ -28,7 +30,7 @@ def remove_member():
         if 1 <= member_number <= len(members_list):
             removed_member = members_list.pop(member_number - 1)
 
-            with open("data/members.json", "w") as file:
+            with open(members_data_source, "w") as file:
                 json.dump(members_list, file, indent=4)
 
             print(f"{Fore.GREEN}Usunięto uczestnika: {removed_member}{Style.RESET_ALL}")
